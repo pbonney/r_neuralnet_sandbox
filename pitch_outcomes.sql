@@ -13,4 +13,6 @@ WHERE a.gameName = p.gameName
 AND a.num = p.gameAtBatId
 AND substr(a.gameName, 5, 4) = "2016"
 AND substr(a.gameName, 10, 2) = "08"
+AND p.px IS NOT NULL
+AND p.pz IS NOT NULL
 ;
