@@ -16,4 +16,8 @@ m <- neuralnet(outcome~px+pz,
                data=df,
                hidden=4,
                linear.output=FALSE,
+               threshold=0.1,   # doesn't matter - we aren't expecting the model to be great
                lifesign='full') # useful parameter so you can monitor what's happening in training
+
+df.test <- data.frame(px=c(-0.5, 0, 0.5), pz=c(1.5, 2, 2.5))
+y <- compute(m,df.test)$net.result
